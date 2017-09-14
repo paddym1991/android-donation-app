@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
@@ -15,6 +16,7 @@ public class Donate extends AppCompatActivity {
     private RadioGroup paymentMethod;
     private ProgressBar progressBar;
     private NumberPicker amountPicker;
+    private EditText amountText;
     private int totalDonated;
 
     @Override
@@ -26,6 +28,7 @@ public class Donate extends AppCompatActivity {
         paymentMethod = (RadioGroup)   findViewById(R.id.paymentMethod);
         progressBar   = (ProgressBar)  findViewById(R.id.progressBar);
         amountPicker  = (NumberPicker) findViewById(R.id.amountPicker);
+        amountText    = (EditText) findViewById(R.id.amountText);
 
         amountPicker.setMinValue(0);
         amountPicker.setMaxValue(1000);
@@ -35,11 +38,20 @@ public class Donate extends AppCompatActivity {
 
     public void donateButtonPressed (View view)
     {
-        totalDonated  = totalDonated + amountPicker.getValue();
         String method = paymentMethod.getCheckedRadioButtonId() == R.id.payPal ? "PayPal" : "Direct";
-        progressBar.setProgress(totalDonated);
 
-        Log.v("Donate", amountPicker.getValue() + " donated by " +  method + "\nCurrent total " + totalDonated);
+        int donatedAmount = amountPicker.getValue();
+        if (donatedAmount == 0)
+        {
+            String text = amountText.getText().toString();
+            if (!text.equals("")) {
+                donatedAmount = Integer.parseInt(text);
+            }
+        }
+
+        totalDonated = totalDonated + donatedAmount;
+        progressBar.setProgress(totalDonated);
+        Log.v("Donate", donatedAmount + " donated by " +  method + "\nCurrent total " + totalDonated);
     }
 }
 
