@@ -51,8 +51,6 @@ public class Donate extends AppCompatActivity {
     public void donateButtonPressed (View view) {
         String method = paymentMethod.getCheckedRadioButtonId() == R.id.payPal ? "PayPal" : "Direct";
 
-        Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
-
         int donatedAmount = amountPicker.getValue();
         if (donatedAmount == 0) {
             String text = amountText.getText().toString();
@@ -61,6 +59,7 @@ public class Donate extends AppCompatActivity {
             }
         }
         if (totalDonated >= progressBar.getMax()) {
+            Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
             toast.show();
             Log.v("Donate","Target Exceeded: " + totalDonated);
         }
