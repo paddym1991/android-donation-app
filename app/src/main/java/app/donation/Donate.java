@@ -92,6 +92,9 @@ public class Donate extends AppCompatActivity {
     {
         switch (item.getItemId())
         {
+            case R.id.menuSettings:
+                Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.menuReport : startActivity (new Intent(this, Report.class));
                 break;
         }
