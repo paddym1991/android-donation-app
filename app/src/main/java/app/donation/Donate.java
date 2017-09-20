@@ -20,6 +20,7 @@ import app.donation.R;
 
 public class Donate extends AppCompatActivity {
 
+    private DonationApp app;
     private Button donateButton;
     private RadioGroup paymentMethod;
     private ProgressBar progressBar;
@@ -33,12 +34,13 @@ public class Donate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
 
+        app           = (DonationApp)  getApplication();
         donateButton  = (Button)       findViewById(R.id.donateButton);
         paymentMethod = (RadioGroup)   findViewById(R.id.paymentMethod);
         progressBar   = (ProgressBar)  findViewById(R.id.progressBar);
         amountPicker  = (NumberPicker) findViewById(R.id.amountPicker);
-        amountText    = (EditText) findViewById(R.id.amountText);
-        totalText     = (TextView) findViewById(R.id.totalText);
+        amountText    = (EditText)     findViewById(R.id.amountText);
+        totalText     = (TextView)     findViewById(R.id.totalText);
 
 
         amountPicker.setMinValue(0);
@@ -64,19 +66,26 @@ public class Donate extends AppCompatActivity {
                 donatedAmount = Integer.parseInt(text);
             }
         }
-        if (totalDonated >= progressBar.getMax()) {
-            Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
-            toast.show();
-            Log.v("Donate","Target Exceeded: " + totalDonated);
-        }
-        else {
-            totalDonated = totalDonated + donatedAmount;
-            progressBar.setProgress(totalDonated);
-            Log.v("Donate", donatedAmount + " donated by " + method + "\nCurrent total " + totalDonated);
-
+        if (donatedAmount > 0)
+        {
+            app.newDonation(new Donation(donatedAmount, method));
+            progressBar.setProgress(app.totalDonated);
             String totalDonatedStr = "Total so far: €" + totalDonated;
             totalText.setText(totalDonatedStr);
         }
+//        if (totalDonated >= progressBar.getMax()) {
+//            Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
+//            toast.show();
+//            Log.v("Donate","Target Exceeded: " + totalDonated);
+//        }
+//        else {
+//            totalDonated = totalDonated + donatedAmount;
+//            progressBar.setProgress(totalDonated);
+//            Log.v("Donate", donatedAmount + " donated by " + method + "\nCurrent total " + totalDonated);
+//
+//            String totalDonatedStr = "Total so far: €" + totalDonated;
+//            totalText.setText(totalDonatedStr);
+//        }
     }
 
     @Override
