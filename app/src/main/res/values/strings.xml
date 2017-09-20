@@ -7,4 +7,6 @@
     <string name="direct">Direct</string>
     <string name="totalText">Total so far: €</string>
     <string name="amountText">\@string/amountText</string>
+    <string name="menuSettings">Settings</string>
+    <string name="menuReport">Report</string>
 </resources>
