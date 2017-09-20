@@ -70,7 +70,7 @@ public class Donate extends AppCompatActivity {
         {
             app.newDonation(new Donation(donatedAmount, method));
             progressBar.setProgress(app.totalDonated);
-            String totalDonatedStr = "Total so far: €" + totalDonated;
+            String totalDonatedStr = "Total so far: €" + app.totalDonated;
             totalText.setText(totalDonatedStr);
         }
 //        if (totalDonated >= progressBar.getMax()) {
