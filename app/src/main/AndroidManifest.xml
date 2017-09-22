@@ -15,18 +15,23 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Report"
-            android:label="@string/reportTitle"></activity>
+            android:label="@string/reportTitle" />
+
         <activity
             android:name=".Donate"
-            android:label="@string/donateTitle"></activity>
+            android:label="@string/donateTitle" />
         <activity
             android:name=".Signup"
-            android:label="@string/signupTitle"></activity>
+            android:label="@string/signupTitle" />
+        <activity
+            android:name=".Login"
+            android:label="@string/loginTitle"></activity>
     </application>
 
 </manifest>

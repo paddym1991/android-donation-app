@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/signupTitle"
-        android:layout_width="293dp"
-        android:layout_height="34dp"
+        android:layout_width="290dp"
+        android:layout_height="27dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="64dp"
@@ -18,7 +18,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.512" />
+        app:layout_constraintHorizontal_bias="0.506" />
 
     <TextView
         android:id="@+id/signupSubtitle"
@@ -38,12 +38,13 @@
         android:id="@+id/FirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/signupFirstName"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/signupSubtitle"
-        tools:layout_editor_absoluteX="16dp" />
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/LastName"
@@ -54,7 +55,8 @@
         android:hint="@string/signupLastName"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/FirstName"
-        tools:layout_editor_absoluteX="16dp" />
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/Email"
@@ -65,7 +67,8 @@
         android:hint="@string/signupEmail"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/LastName"
-        tools:layout_editor_absoluteX="16dp" />
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/Password"
@@ -76,7 +79,8 @@
         android:hint="@string/signupPassword"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/Email"
-        tools:layout_editor_absoluteX="16dp" />
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/registerButton"
@@ -85,7 +89,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/signupRegister"
+        android:onClick="signupButtonPressed"
+        android:text="@string/registerButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
