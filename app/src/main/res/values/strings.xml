@@ -13,4 +13,7 @@
     <string name="reportTitle">Report</string>
     <string name="defaultAmount">00</string>
     <string name="defaultMethod">N/A</string>
+    <string name="signupButton">Sign up</string>
+    <string name="loginButton">Login</string>
+    <string name="greeting">Welcome to Donation app</string>
 </resources>
