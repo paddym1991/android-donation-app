@@ -73,6 +73,9 @@ public class Donate extends AppCompatActivity {
             String totalDonatedStr = "Total so far: €" + app.totalDonated;
             totalText.setText(totalDonatedStr);
         }
+
+        amountPicker.setValue(0);
+        amountText.setText("");
 //        if (totalDonated >= progressBar.getMax()) {
 //            Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
 //            toast.show();
