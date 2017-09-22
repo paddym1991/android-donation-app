@@ -15,7 +15,6 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,7 +24,9 @@
         <activity
             android:name=".Donate"
             android:label="@string/donateTitle"></activity>
-        <activity android:name=".Signup"></activity>
+        <activity
+            android:name=".Signup"
+            android:label="@string/signupTitle"></activity>
     </application>
 
 </manifest>
