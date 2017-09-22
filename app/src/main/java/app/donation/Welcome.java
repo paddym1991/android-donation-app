@@ -22,7 +22,7 @@ public class Welcome extends AppCompatActivity {
     }
 
     public void signupButtonPressed (View view) {
-        startActivity(new Intent(this, Donate.class));
+        startActivity(new Intent(this, Signup.class));
     }
 }
 
