@@ -1,5 +1,6 @@
 package app.donation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,11 +18,11 @@ public class Welcome extends AppCompatActivity {
     }
 
     public void loginButtonPressed (View view) {
-        Toast.makeText(this, "Login Selected", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, Donate.class));
     }
 
     public void signupButtonPressed (View view) {
-        Toast.makeText(this, "Signup Selected", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, Donate.class));
     }
 }
 
