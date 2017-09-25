@@ -1,5 +1,7 @@
-package app.donation;
+package app.donation.activity;
 
+import app.donation.model.Donation;
+import app.donation.main.DonationApp;
 import app.donation.R;
 
 import android.content.Context;
@@ -8,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;

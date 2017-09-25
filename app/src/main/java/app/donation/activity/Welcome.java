@@ -1,10 +1,13 @@
-package app.donation;
+package app.donation.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
+
+import app.donation.R;
+import app.donation.activity.Login;
+import app.donation.activity.Signup;
 
 /**
  * Created by Paddym1991 on 22/09/2017.
