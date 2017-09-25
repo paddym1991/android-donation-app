@@ -19,6 +19,18 @@ public class DonationApp extends Application
         users.add(user);
     }
 
+    public boolean validUser (String email, String password)
+    {
+        for (User user : users)
+        {
+            if (user.email.equals(email) && user.password.equals(password))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean newDonation(Donation donation)
     {
         boolean targetAchieved = totalDonated > target;
