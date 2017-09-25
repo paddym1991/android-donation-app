@@ -12,6 +12,12 @@ public class DonationApp extends Application
     public final int       target       = 10000;
     public int             totalDonated = 0;
     public List <Donation> donations    = new ArrayList<Donation>();
+    public List <User>     users        = new ArrayList<User>();
+
+    public void newUser(User user)
+    {
+        users.add(user);
+    }
 
     public boolean newDonation(Donation donation)
     {
